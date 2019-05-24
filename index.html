@@ -1,1 +1,24 @@
 <h3>Web page is comming </h3>
+
+I have been lost 2 weeks of work since my pc crash, so i create this to do a simple backup from github
+
+<p>cmd crontab -e </p>
+
+<p> 0 */2 * * * bash /home/jerry/.backup_process </p>
+
+<code>
+#!/bin/bash
+
+echo "<<<<<   Backup Procedure Start   >>>>>"
+
+echo "------------------------------------"
+cd /home/jerry/git/projects
+git fetch
+git add .
+git commit -m "Auto-by-pc-$RANDOM"
+git push -u origin master
+
+cd /home/jerry/
+echo "------------------------------------"
+
+</code>
